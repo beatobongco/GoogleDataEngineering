@@ -46,3 +46,8 @@ Regions - use many for a global application
 
 Compute Engine
 * think of as fungible - able to replace or be replaced by another identical item
+
+Cloud SQL
+* good for gigabytes of relational information
+* auto replication, backups, fast connection 
+* there are random failures sometimes, if this happens try creating in another region
