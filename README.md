@@ -55,3 +55,18 @@ Cloud SQL
 
 Cloudshell
 * VM with devtools installed and 5GB persistent with some [limitations](https://cloud.google.com/shell/docs/limitations)
+
+Hadoop
+* map reduce framework
+
+Pig
+* higher level scripting language for Hadoop
+
+Hive
+* SQL-like interface to query data stored in highly distributed file systems (HDFS)
+
+Spark
+* analytics engine built on Hadoop
+
+Dataproc
+* google-managed hadoop, pig, hive, spark programs 
