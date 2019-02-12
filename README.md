@@ -51,3 +51,7 @@ Cloud SQL
 * good for gigabytes of relational information
 * auto replication, backups, fast connection 
 * there are random failures sometimes, if this happens try creating in another region
+* you can configure network on creation
+
+Cloudshell
+* VM with devtools installed and 5GB persistent with some [limitations](https://cloud.google.com/shell/docs/limitations)
