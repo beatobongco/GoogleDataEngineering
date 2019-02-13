@@ -73,3 +73,19 @@ Insights from the activity
 * To run jobs that ingest data from a db, you have to [authorize](https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab3b/authorize_dataproc.sh) dataproc to access the db
 * You upload your [ML script](https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab3b/sparkml/train_and_apply.py) to a GCS bucket and run it via dataproc -> jobs -> submit jobs
 
+### Datastore
+
+* transactional support for heirarchical data
+* good for terabytes of heirarchical data
+* Persistent hashmap
+* filter objects on property
+* returns iterable (think generators in Python) so for big queries doesn't take up all our memory
+
+### Bigtable
+
+* petabytes of **flat** data ex. sensor data, high frequency stock trading
+* tables must look tall and narrow
+* key-value HBase API
+* append-only
+* updates append a new row
+* high throughput
