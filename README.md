@@ -27,7 +27,7 @@ correctly can result in transformational innovation in your own business
 preemptible VM - pay a discounted price but when someone who can pay full-price comes along, lose the machine.
 Useful for fault-tolerant systems or for running big jobs
 
-Cloud Storage
+### Cloud Storage
 * persistent blob storage, staging ground for import to other Google cloud products
 * usually the first step of data lifecycle, use `gsutil cp`
 * `gs://some_address` is just a key to a blob. Not a real folder structure
@@ -44,29 +44,32 @@ Regions - use many for a global application
 
 `gsuitl acl` - controls access control lists. Do stuff like give everyone access to your cloud storage bucket
 
-Compute Engine
+### Compute Engine
 * think of as fungible - able to replace or be replaced by another identical item
 
-Cloud SQL
+### Cloud SQL
 * good for gigabytes of relational information
 * auto replication, backups, fast connection 
 * there are random failures sometimes, if this happens try creating in another region
 * you can configure network on creation
 
-Cloudshell
-* VM with devtools installed and 5GB persistent with some [limitations](https://cloud.google.com/shell/docs/limitations)
+### Cloudshell 
 
-Hadoop
-* map reduce framework
+VM with devtools installed and 5GB persistent with some [limitations](https://cloud.google.com/shell/docs/limitations)
 
-Pig
-* higher level scripting language for Hadoop
+### Dataproc
 
-Hive
-* SQL-like interface to query data stored in highly distributed file systems (HDFS)
+Hadoop - map reduce framework
 
-Spark
-* analytics engine built on Hadoop
+Pig - higher level scripting language for Hadoop
 
-Dataproc
-* google-managed hadoop, pig, hive, spark programs 
+Hive - SQL-like interface to query data stored in highly distributed file systems (HDFS)
+
+Spark - analytics engine built on Hadoop
+
+Dataproc - google-managed hadoop, pig, hive, spark programs 
+
+Insights from the activity
+* To run jobs that ingest data from a db, you have to [authorize](https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab3b/authorize_dataproc.sh) dataproc to access the db
+* You upload your [ML script](https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab3b/sparkml/train_and_apply.py) to a GCS bucket and run it via dataproc -> jobs -> submit jobs
+
