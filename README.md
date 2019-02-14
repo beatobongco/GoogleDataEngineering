@@ -97,6 +97,7 @@ Insights from the activity
 * ~500 GB in 12 seconds
 * each "instance" is a table
 * need to prefix with `#standardSQL`
+* can do `JOIN`s with Google Sheets 
 
 My favorite offering so far. There's a public HN dataset that I can use for mining for knowledge hehe
 
@@ -106,3 +107,9 @@ SELECT id, timestamp, title, url, score FROM `bigquery-public-data.hacker_news.f
 WHERE title IS NOT NULL and title != "" and timestamp > '2019-01-01' 
 ORDER BY score DESC LIMIT 100;
 ```
+
+Three ways of loading data
+* Files on disk on Cloud Storage
+* Stream data w/ dataflow -- run queries while data is streaming in
+* Federated (aggregate data fro disparate sources) data source (CSV, JSON, AVRO, Google Sheets)
+
