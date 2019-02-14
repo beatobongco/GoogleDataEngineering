@@ -102,5 +102,7 @@ My favorite offering so far. There's a public HN dataset that I can use for mini
 
 ```sql
 #standardSQL
-SELECT id, timestamp, title, url, score FROM `bigquery-public-data.hacker_news.full` WHERE title IS NOT NULL and title != "" and timestamp > '2019-01-01' ORDER BY score DESC LIMIT 500;
+SELECT id, timestamp, title, url, score FROM `bigquery-public-data.hacker_news.full` 
+WHERE title IS NOT NULL and title != "" and timestamp > '2019-01-01' 
+ORDER BY score DESC LIMIT 100;
 ```
