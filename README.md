@@ -89,3 +89,18 @@ Insights from the activity
 * append-only
 * updates append a new row
 * high throughput
+
+### Bigquery
+
+* serverless data warehouse
+* run SQL queries on massive amounts of data via API call (GB -> petabytes)
+* ~500 GB in 12 seconds
+* each "instance" is a table
+* need to prefix with `#standardSQL`
+
+My favorite offering so far. There's a public HN dataset that I can use for mining for knowledge hehe
+
+```sql
+#standardSQL
+SELECT id, timestamp, title, url, score FROM `bigquery-public-data.hacker_news.full` WHERE title IS NOT NULL and title != "" and timestamp > '2019-01-01' ORDER BY score DESC LIMIT 500;
+```
