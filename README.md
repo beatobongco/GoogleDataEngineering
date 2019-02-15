@@ -113,3 +113,38 @@ Three ways of loading data
 * Stream data w/ dataflow -- run queries while data is streaming in
 * Federated (aggregate data fro disparate sources) data source (CSV, JSON, AVRO, Google Sheets)
 
+### Datalab 
+
+* Jupyter notebook that handles auth to GCP
+* `datalab create <name> --machine-type n1-highmem-8 us-central1-a`
+* has HTML support!
+* [Different](https://stackoverflow.com/questions/50340602/google-colaboratory-vs-google-datalab-how-are-they-different) from colab
+* quite powerful when used together with BigQuery
+
+```sql
+%bq query -n taxiquery
+WITH trips AS (
+  SELECT EXTRACT (DAYOFYEAR from pickup_datetime) AS daynumber 
+  FROM `bigquery-public-data.new_york.tlc_yellow_trips_*`
+  where _TABLE_SUFFIX = @YEAR
+)
+SELECT daynumber, COUNT(1) AS numtrips FROM trips
+GROUP BY daynumber ORDER BY daynumber
+```
+
+```py
+query_parameters = [
+  {
+    'name': 'YEAR',
+    'parameterType': {'type': 'STRING'},
+    'parameterValue': {'value': 2015}
+  }
+]
+trips = taxiquery.execute(query_params=query_parameters).result().to_dataframe()
+```
+
+### Tensorflow
+
+* ML lib w/ C++ backend for GPU
+* ML advice: use the [simplest model](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=3&seed=0.60261&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false) that solves the problem. 
+* Note that we don't need [feature engineering](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=&seed=0.60261&showTestData=false&discretize=false&percTrainData=50&x=false&y=false&xTimesY=false&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
