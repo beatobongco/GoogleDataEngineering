@@ -156,3 +156,26 @@ General ML advice
 ![image](https://user-images.githubusercontent.com/3739702/52988875-fafb5180-343b-11e9-95ca-8a4e058d5bca.png)
 * the more columns you use as input features, the more rows you need to have in your training dataset
 * for smaller data, it's better to use simple ML like linear regression. It's more explainable too
+
+### CloudML Engine 
+
+NoOps, distributed tensorflow
+
+### Google ML APIs
+
+Use APIs Google has provided (and models trained on Google's data) for solved problems. This can be a part of (or simplify) your pipeline.
+
+* label detection - classify things into broad categories (transportation, animal, flowers)
+* face detection (+emotional state, headware)
+* OCR + language support
+* explicit content detection
+* landmark detection (popular natural or man-made landmarks)
+* logo detection
+* can do image matching (API returns URLs of sites and of similar images)
+* translation API
+* natural language API (entity and sentiment)
+* speech-to-text
+* vision API - detects labels and gives you the time when they showed up
+Oh my god, JSON API
+![image](https://user-images.githubusercontent.com/3739702/52990023-216fbb80-3441-11e9-9d93-c23e9e02f223.png)
+
