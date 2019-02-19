@@ -155,3 +155,4 @@ General ML advice
 * Do I have 5-10 examples of this data? If not, drop it. Very specific data causes overfitting
 ![image](https://user-images.githubusercontent.com/3739702/52988875-fafb5180-343b-11e9-95ca-8a4e058d5bca.png)
 * the more columns you use as input features, the more rows you need to have in your training dataset
+* for smaller data, it's better to use simple ML like linear regression. It's more explainable too
