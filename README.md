@@ -148,3 +148,10 @@ trips = taxiquery.execute(query_params=query_parameters).result().to_dataframe()
 * ML lib w/ C++ backend for GPU
 * ML advice: use the [simplest model](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=3&seed=0.60261&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false) that solves the problem. 
 * Note that we don't need [feature engineering](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=&seed=0.60261&showTestData=false&discretize=false&percTrainData=50&x=false&y=false&xTimesY=false&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
+
+General ML advice
+* Make sure your data is numerical
+* One-hot encode categorical data
+* Do I have 5-10 examples of this data? If not, drop it. Very specific data causes overfitting
+![image](https://user-images.githubusercontent.com/3739702/52988875-fafb5180-343b-11e9-95ca-8a4e058d5bca.png)
+* the more columns you use as input features, the more rows you need to have in your training dataset
