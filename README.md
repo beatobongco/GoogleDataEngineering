@@ -78,7 +78,7 @@ Insights from the activity
 * transactional support for heirarchical data
 * good for terabytes of heirarchical data
 * Persistent hashmap
-* filter objects on property
+* filter objects on attributes/property
 * returns iterable (think generators in Python) so for big queries doesn't take up all our memory
 
 ### Bigtable
@@ -89,6 +89,7 @@ Insights from the activity
 * append-only
 * updates append a new row
 * high throughput
+* only get by key
 
 ### Bigquery
 
