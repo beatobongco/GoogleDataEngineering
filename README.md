@@ -99,7 +99,7 @@ Insights from the activity
 * need to prefix with `#standardSQL`
 * can do `JOIN`s with Google Sheets 
 
-My favorite offering so far. There's a public HN dataset that I can use for mining for knowledge hehe
+My favorite offering so far. There's a public HN dataset that I can use for mining for knowledge hehe there are also many nice public datasets, like picture in the [Met](https://bigquery.cloud.google.com/table/bigquery-public-data:the_met.images?pli=1&tab=preview)
 
 ```sql
 #standardSQL
@@ -180,4 +180,4 @@ Use APIs Google has provided (and models trained on Google's data) for solved pr
 Oh my god, JSON API
 ![image](https://user-images.githubusercontent.com/3739702/52990023-216fbb80-3441-11e9-9d93-c23e9e02f223.png)
 
-Super easy to use https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab4c/mlapis.ipynb
+Super easy to use https://github.com/beatobongco/GoogleDataEngineering/notebooks/mlapis.ipynb
