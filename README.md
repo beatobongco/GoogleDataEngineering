@@ -176,6 +176,8 @@ Use APIs Google has provided (and models trained on Google's data) for solved pr
 * natural language API (entity and sentiment)
 * speech-to-text
 * vision API - detects labels and gives you the time when they showed up
+
 Oh my god, JSON API
 ![image](https://user-images.githubusercontent.com/3739702/52990023-216fbb80-3441-11e9-9d93-c23e9e02f223.png)
 
+Super easy to use https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab4c/mlapis.ipynb
