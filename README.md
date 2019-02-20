@@ -180,4 +180,4 @@ Use APIs Google has provided (and models trained on Google's data) for solved pr
 Oh my god, JSON API
 ![image](https://user-images.githubusercontent.com/3739702/52990023-216fbb80-3441-11e9-9d93-c23e9e02f223.png)
 
-Super easy to use https://github.com/beatobongco/GoogleDataEngineering/notebooks/mlapis.ipynb
+Super easy to use https://github.com/beatobongco/GoogleDataEngineering/blob/master/notebooks/mlapis.ipynb
