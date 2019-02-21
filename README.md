@@ -182,3 +182,19 @@ Oh my god, JSON API
 ![image](https://user-images.githubusercontent.com/3739702/52990023-216fbb80-3441-11e9-9d93-c23e9e02f223.png)
 
 Super easy to use https://github.com/beatobongco/GoogleDataEngineering/blob/master/notebooks/mlapis.ipynb
+
+### Pub/Sub
+
+No-ops serverless global message queue
+
+Async processing
+* common design pattern for highly available systems, load balancing, reduce coupling
+* Instead of immediately processing, send these to a queue so it doesn't crash the system
+
+## Dataflow
+
+* Apache beam
+* no-ops data pipelines in Java and Python
+* you can use it over dataproc if your needs fit
+![image](https://user-images.githubusercontent.com/3739702/53143331-7858ca80-35d2-11e9-9667-16be697e718e.png)
+
