@@ -1,7 +1,3 @@
-# Google Data Engineering
-
-Notes and code for the Google Data Engineering specialization on Coursera
-
 ## Google Cloud Platform Big Data and Machine Learning Fundamentals
 
 Compute, network, storage - foundational requirements for computing
