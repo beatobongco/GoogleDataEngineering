@@ -59,3 +59,15 @@ You can find equivalent REST or command line commands for doing most of what you
 * Pig provides SQL primitives similar to Hive, but in a more flexible scripting language format. Pig can also deal with semi-structured data, such as data having partial schemas, or for which the schema is not yet known. For this reason it is sometimes used for Extract Transform Load (ETL). 
 * It generates Java MapReduce jobs. 
 * Pig is not designed to deal with unstructured data.
+
+### Distributed processing
+* solution to the diminishing results of vertical scaling
+* shard your data into pieces and process them on a cluster of nodes
+* cant store data on the clusters themselves because what if one fails? Data will be lost
+* MTBF - mean time between failure of computers are 3 years e.g. for 3 computers 1 will fail each year
+* Google File System whitepaper led to Hadoop DFS -- replicating data across multiple nodes, recovering data when node is lost
+* HDFS - 3 copies of data, if falls below 3 will replicate the data. Some systems are rack aware, copies are in different places
+  * called annealing or self-healing system
+* Google's petabit networking allows you to process data where it is (no more copying to where the compute lives)
+* East-west communications -- bisectional bandwidth -- server-to-server communications, the speed of which is important
+to serverless applications
