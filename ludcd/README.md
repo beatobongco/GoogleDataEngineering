@@ -71,3 +71,10 @@ You can find equivalent REST or command line commands for doing most of what you
 * Google's petabit networking allows you to process data where it is (no more copying to where the compute lives)
 * East-west communications -- bisectional bandwidth -- server-to-server communications, the speed of which is important
 to serverless applications
+
+## Spark
+* cluster computing framework
+* RDD - (resilient distributed datasets) hide complexity of location / replication / partitioning / recovering data in a cluster from the user while exposing it as a single entity
+* program w/ requests, lazy evaluation, directed acyclic graph (DAG)
+* think in "transformations" input: RDD -> transform -> output: RDD
+* transformations are lambda/anonymous functions
