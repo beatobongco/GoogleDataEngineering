@@ -75,6 +75,58 @@ to serverless applications
 ## Spark
 * cluster computing framework
 * RDD - (resilient distributed datasets) hide complexity of location / replication / partitioning / recovering data in a cluster from the user while exposing it as a single entity
-* program w/ requests, lazy evaluation, directed acyclic graph (DAG)
-* think in "transformations" input: RDD -> transform -> output: RDD
-* transformations are lambda/anonymous functions
+* think in "transformations", requests to Spark that describe what you want done but Spark does it in its own way
+* transformations: input: RDD -> transform -> output: RDD
+* transformations are lambda/anonymous functions (evaluated lazily)
+* when Spark receives transformations stores them in a DAG (directed acyclic graph) but doesn't perform them at that time.
+Performs when it receives an action, when it will create efficient pipelines to do the work
+
+Spark chains stuff together
+```py
+from operator import add
+lines = sc.textFile("/sampledata/sherlock-holmes.txt")
+
+words =  lines.flatMap(lambda x: x.split(' '))
+pairs = words.map(lambda x: (len(x),1))
+wordsize = pairs.reduceByKey(add)
+output = wordsize.sortByKey().collect()
+```
+
+```py
+output2 =  lines.flatMap(lambda x: x.split(' ')).map(lambda x: (len(x),1)).reduceByKey(add).sortByKey().collect()
+
+for (size, count) in output2: print(size, count)
+
+```
+
+The gist of what the lab taught
+* load your data into HDFS `hadoop fs -copyFromLocal road-not-taken.txt /sampledata/.`
+* you can use the `pyspark` `REPL` to play around
+* you can make a python file to do transformations and run `spark-submit <name of file>`
+
+```py
+from pyspark.sql import SparkSession
+from operator import add
+import re
+
+print("Okay Google.")
+
+spark = SparkSession\
+        .builder\
+        .appName("CountUniqueWords")\
+        .getOrCreate()
+
+lines = spark.read.text("/sampledata/road-not-taken.txt").rdd.map(lambda x: x[0])
+counts = lines.flatMap(lambda x: x.split(' ')) \
+                  .filter(lambda x: re.sub('[^a-zA-Z]+', '', x)) \
+                  .filter(lambda x: len(x)>1 ) \
+                  .map(lambda x: x.upper()) \
+                  .map(lambda x: (x, 1)) \
+                  .reduceByKey(add) \
+                  .sortByKey()
+output = counts.collect()
+for (word, count) in output:
+  print("%s = %i" % (word, count))
+
+spark.stop()
+```
