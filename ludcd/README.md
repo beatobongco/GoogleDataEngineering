@@ -130,3 +130,6 @@ for (word, count) in output:
 
 spark.stop()
 ```
+
+## BigQuery
+* some overlap with Hadoop and in certain cases can be used instead of Hadoop
