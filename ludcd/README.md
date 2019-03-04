@@ -131,5 +131,19 @@ for (word, count) in output:
 spark.stop()
 ```
 
-## BigQuery
+* Spark allows you to deal with huge datasets. For small datasets you could just use pandas, but if it cant fit into memory
+use Spark
+* pandas dataframes can be converted into RDDs
+
+## BigQuery + Spark
 * some overlap with Hadoop and in certain cases can be used instead of Hadoop
+* Spark jobs can read from BigQuery but go through a temporary GCS storage -- good for periodic or infrequent transfers
+* you can also use a connector from Spark to read from BQ (as an RDD) and write back to BQ -- better for frequent transfers 
+
+## Installations scripts
+
+Install custom software on master + worker nodes
+
+* use shebang (#!) to specify what language interpreter to use
+* can check role of the VM by checking `/usr/share/google/get_metadata_value attributes/dataproc-role` `Master`
+* pre-built initialization actions: `gs://dataproc-initialization-actions`
