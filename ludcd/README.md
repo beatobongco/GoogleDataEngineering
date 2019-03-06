@@ -147,3 +147,21 @@ Install custom software on master + worker nodes
 * use shebang (#!) to specify what language interpreter to use
 * can check role of the VM by checking `/usr/share/google/get_metadata_value attributes/dataproc-role` `Master`
 * pre-built initialization actions: `gs://dataproc-initialization-actions`
+
+Example of an initialization script
+
+```bash
+#!/bin/bash
+
+# install Google Python client on all nodes
+apt-get update
+apt-get install -y python-pip
+pip install --upgrade google-api-python-client
+
+ROLE=$(/usr/share/google/get_metadata_value attributes/dataproc-role)
+if [[ "${ROLE}" == 'Master' ]]; then
+   git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+fi
+```
+
+* Also note that mostly everything here can be done via CLI
