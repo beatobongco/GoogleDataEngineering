@@ -165,3 +165,14 @@ fi
 ```
 
 * Also note that mostly everything here can be done via CLI
+
+## Tensorflow
+* nice explanation of ML: assume a solution exists, use exhaustation method to generate solutions then uses error to refine guess
+
+## ML APIs
+* nice way to put it: reduces data into countable things 
+* TIL: Google has good APIs for chatbots https://dialogflow.com/
+* Cool story: Meeting Nanny: Google used Vision API to check if meetings were taking place. Detects motion every 30 seconds
+for the first 8 minutes, sends a PubSub message to booker if no motion. Also sends meeting IDs/link as PubSub message.
+* Ocado: grocery supermarket: route emails based on NLP
+![image](https://user-images.githubusercontent.com/3739702/53931157-018df800-40cf-11e9-9363-4b9de881e438.png)
